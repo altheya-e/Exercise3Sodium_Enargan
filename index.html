@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 100vh; background-image: linear-gradient(to bottom, #ffeda0, #ffa585); background-size: cover; background-repeat: no-repeat;">
+    <script>
+        var random = Math.random() * 1000;
+        var num = Math.round(random);
+        num = num.toString();
+        document.write("Randomly generated number: " + num);
+        if (num.length == 3) {
+            var hundreds = num[0] * 100;
+            var tens = num[1] * 10;
+            var ones = num[2];
+            if (tens == 0) {
+                if (ones == 0) {
+                    document.write("<br><br>Breakdown: " + hundreds);
+                }
+                else {
+                    document.write("<br><br>Breakdown: " + hundreds + ", " + ones);
+                }
+            }
+            else if (ones == 0) {
+                document.write("<br><br>Breakdown: " + hundreds + ", " + tens);
+            } 
+            else{
+                document.write("<br><br>Breakdown: " + hundreds + ", " + tens + ", " + ones);
+            }
+        }
+        else if (num.length == 2) {
+            var tens = num[0] * 10;
+            var ones = num[1];
+            if (ones == 0) {
+                document.write("<br><br>Breakdown: " + tens);
+            } 
+            else{
+                document.write("<br><br>Breakdown: " + tens + ", " + ones);
+            }
+        }
+        else if (num.length == 1) {
+            var ones = num[0]
+            document.write("<br><br>Breakdown: " + ones);
+        }
+        var date = new Date();
+        document.write("<br><br>Date of printing: " + date);
+    </script>
+</body>
+</html>
